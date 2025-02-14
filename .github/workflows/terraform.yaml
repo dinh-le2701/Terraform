@@ -3,10 +3,16 @@ name: Terraform CI/CD pipeline
 on: 
   push:
     branches:
+      - awsdev/task-2
+
+    pull_request: 
+      branches:
+        - awsdev/task-2 # run when had pr on this branch
 
 jobs: 
   terraform:
     name: Terraform Job
+    runs-on: ubuntu-latest
     steps:
       # Step 1: check code
       - name: Checkout repository
@@ -28,5 +34,5 @@ jobs:
 
       # Step 5:
       - name: Terraform Apply
-        run: terraform apply
+        run: terraform apply -auto-approve
 
