@@ -8,7 +8,7 @@ terraform {
 }
 
 resource "aws_s3_bucket" "aws_dev" {
-    bucket = "terraform-bucket-my-shop"
+    bucket = "terraform-s3-bucket-my-shop"
 }
 
 resource "aws_s3_bucket_versioning" "version" {
